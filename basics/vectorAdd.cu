@@ -4,15 +4,16 @@
 #include <cuda_runtime.h>
 
 
-__global__ void addVector(float *a, float *b, float *c, int N) {
-    int idx = threadIdx.x + blockIdx.x * blockDim.x;
+__global__ void addVector(float *a, float *b, float *c, const unsigned int N) {
+    unsigned int idx = threadIdx.x + blockIdx.x * blockDim.x;
     if(idx < N)
         c[idx] = a[idx] + b[idx];
 }
 
 int main(int argc, char **argv)
 {
-    const unsigned int N = (argc > 1)? atoi(argv[1]) : (1 << 25);
+    const unsigned int N = (argc > 1)? atoi(argv[1]) : (1u << 25);
+    assert(N > 0);
 
     // CPU memory pointers
     float *x = (float*)malloc(N * sizeof(float));
