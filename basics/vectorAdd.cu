@@ -26,7 +26,7 @@ int main(int argc, char **argv)
 
     float *x_d, *y_d, *z_d;
 
-    // Aloocate memory on GPU
+    // Allocate memory on GPU
     cudaMalloc((void**)&x_d, N * sizeof(float));
     cudaMalloc((void**)&y_d, N * sizeof(float));
     cudaMalloc((void**)&z_d, N * sizeof(float));
@@ -49,7 +49,7 @@ int main(int argc, char **argv)
     }
     printf("Valid\n");
     
-    // Dealocate memory on GPU
+    // Deallocate memory on GPU
     cudaFree(x_d);
     cudaFree(y_d);
     cudaFree(z_d);
