@@ -5,9 +5,9 @@
 #include <cuda_runtime.h>
 
 
-__global__ void grayScale(float *a, float *b, float *c, float *d, int M, int N) {
-    int row = threadIdx.y + blockDim.y * blockIdx.y;
-    int col = threadIdx.x + blockDim.x * blockIdx.x;
+__global__ void grayScale(float *a, float *b, float *c, float *d, int M, const unsigned int N) {
+    unsigned int row = threadIdx.y + blockDim.y * blockIdx.y;
+    unsigned int col = threadIdx.x + blockDim.x * blockIdx.x;
 
     if(row < M && col < N) {
         d[row * N + col] = 0.299f * a[row * N + col] + 0.587f * b[row * N + col] + 0.114f * c[row * N + col];
@@ -74,4 +74,6 @@ int main(int argc, char **argv)
     free(green);
     free(blue);
     free(gray);
+
+    return 0;
 }
