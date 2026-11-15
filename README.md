@@ -1,8 +1,10 @@
 ## Parallel computing using CUDA
 
-1. Basics
+### Basics
 
-    i. vectorAdd
+1. [vector addition](https://github.com/m4dvise/parallel-computing/blob/main/basics/vector_add.cu)
+2. [gray caling image](https://github.com/m4dvise/parallel-computing/blob/main/basics/gray_scale.cu)
+3. [matrix multipliaction naive](https://github.com/m4dvise/parallel-computing/blob/main/basics/matrix_mul.cu)
 
 
 Credit: [CMPS 297S/396AA - GPU Computing - Spring 2021](https://www.youtube.com/playlist?list=PLZrjSW9GrEZE07f8gLECc0tfJwNDm75RW)
